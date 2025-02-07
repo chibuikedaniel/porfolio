@@ -9,10 +9,12 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
     autoplay: {
-        delay: 2000,
+        delay: 1500,
         disableOnInteraction: false,
     },
     slidesPerView: 4,
     spaceBetween: 0,
     
 });
+
+
