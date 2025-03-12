@@ -13,27 +13,61 @@
 
 <body>
     <div class="h-auto pb-5">
-        <div class="container mx-auto mb-6">
+        <div class="container mx-auto mb-6" id="home">
             <!------- NAV  ---------->
-            <div class="sticky top-0 bg-white w-full flex justify-between border-b border-[#F3F3F3] items-center py-6 mr-6 pr-6 mt-6">
-                <a href=""></a>
+            <div
+                class="sticky top-0 bg-white w-full flex justify-between border-b border-[#F3F3F3] items-center py-6 mr-6 pr-6 mt-6" >
+                <a href="#home"></a>
+
+                <!-- Hamburger Button -->
+                <button id="menu-btn" class="block md:hidden">
+                    <div class="w-6 h-0.5 bg-black mb-1 transition-all duration-300"></div>
+                    <div class="w-6 h-0.5 bg-black mb-1 transition-all duration-300"></div>
+                    <div class="w-6 h-0.5 bg-black transition-all duration-300"></div>
+                </button> 
+                <!-- Hamburger Button -->
+
+                <!------- LARGE SCREEN MENU  ---------->
                 <ul class="hidden md:flex items-center gap-x-6 text-gray-500 pr-6">
                     <li><a class="text-base text-[#151515] font-medium border-b-2 pb-2 border-[#151515]"
-                            href="">Home</a>
+                            href="#home">Home</a>
                     </li>
                     <li><a class="text-base text-gray-500" href="#projects">Projects</a></li>
                     <li><a class="text-base text-gray-500" href="#aboutMe">About Me</a></li>
-                    <li><a class="text-base text-gray-500" href="Full resume .pdf" download="Full resume .pdf">Resume</a></li>
-                    <li><a class="text-base text-gray-500" href="#contact"><button class="py-3 px-5 border border-[#151515] rounded-full text-[#151515]">Let'stalk</button></a>
+                    <li><a class="text-base text-gray-500" href="Full resume .pdf"
+                            download="Full resume .pdf">Resume</a></li>
+                    <li><a class="text-base text-gray-500" href="#contact"><button
+                                class="py-3 px-5 border border-[#151515] rounded-full text-[#151515]">Let'stalk</button></a>
                     </li>
                 </ul>
             </div>
+            <!------- LARGE SCREEN MENU  ---------->
+
+            <!------- SMALL SCREEN MENU  ---------->
+            <div id="menu" class="hidden md:hidden bg-white ">
+                <ul class="p-4 space-y-2">
+                    <li><a class="text-base text-[#151515] font-medium border-b-2 pb-2 border-[#151515]"
+                        href="#home">Home</a>
+                </li>
+                <li><a class="text-base text-gray-500" href="#projects">Projects</a></li>
+                <li><a class="text-base text-gray-500" href="#aboutMe">About Me</a></li>
+                <li><a class="text-base text-gray-500" href="Full resume .pdf"
+                        download="Full resume .pdf">Resume</a></li>
+                <li><a class="text-base text-gray-500" href="#contact"><button
+                            class="py-3 px-5 border border-[#151515] rounded-full text-[#151515]">Let'stalk</button></a>
+                </li>
+                </ul>
+            </div>
+            <!------- SMALL SCREEN MENU  ---------->
+
             <!------- NAV  ---------->
 
             <!------- HERO  ---------->
             <div class="py-4">
-                <h1 class="font-semibold mt-16 text-4xl md:pr-6 md:mt-24 md:text-8xl">Building Smart Solutions, Crafting Seamless Experiences.</h1>
-                <a href="Full resume .pdf" target="_blank"><button class="bg-[#151515] text-white py-3 px-6 rounded-full border-0 mt-7">See my resume</button></a>
+                <h1 class="font-semibold mt-16 text-4xl md:pr-6 md:mt-24 md:text-8xl">Building Smart Solutions, Crafting
+                    Seamless Experiences.</h1>
+                <a href="Full resume .pdf" target="_blank"><button
+                        class="bg-[#151515] text-white py-3 px-6 rounded-full border-0 mt-7">See my resume</button></a>
             </div>
             <!------- HERO  ---------->
 
@@ -283,7 +317,11 @@
                             srcset="" src="" style="color: transparent;"></div>
                     <div class="w-full md:w-1/2">
                         <h3 class="font-semibold text-3xl">About Me</h3>
-                        <p class="leading-[30px] mt-5">I am a seasoned software developer with extensive experience in both frontend and backend technologies. Throughout my career, I have worked across diverse industries, delivering innovative solutions that seamlessly integrate user-centric design with robust functionality. My portfolio highlights a collection of projects that reflect my expertise and passion for pushing the boundaries of software development.</p>
+                        <p class="leading-[30px] mt-5">I am a seasoned software developer with extensive experience in
+                            both frontend and backend technologies. Throughout my career, I have worked across diverse
+                            industries, delivering innovative solutions that seamlessly integrate user-centric design
+                            with robust functionality. My portfolio highlights a collection of projects that reflect my
+                            expertise and passion for pushing the boundaries of software development.</p>
                     </div>
                 </div>
             </section>
@@ -295,7 +333,9 @@
                     <h5 class="font-light text-xl w-1/3">CONTACT</h5>
                     <div class="mt-12 md:mt-0">
                         <h3 class="font-light text-4xl md:text-6xl">Your Digital Identity Begins Here.</h3>
-                        <p class="text-light mt-5 pr-12">Ready to elevate your software solutions? Schedule a consultation today and experience the transformative impact of a strong, distinctive brand presence.</p>
+                        <p class="text-light mt-5 pr-12">Ready to elevate your software solutions? Schedule a
+                            consultation today and experience the transformative impact of a strong, distinctive brand
+                            presence.</p>
                         <div class="mt-7 flex items-center"><a class="mr-4"
                                 href="mailto:danielchibuike77@gmail.com"><button
                                     class="bg-[#151515] text-white py-3 px-6 rounded-full border-0">Get in
