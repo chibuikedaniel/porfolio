@@ -1,71 +1,23 @@
-const swiper = new Swiper('.swiper', {
-    loop: true, // Enable infinite loop
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    autoplay: {
-        delay: 1500,
-        disableOnInteraction: false,
-    },
-    slidesPerView: 4,
-    spaceBetween: 0,
-
-});
-
-
-const menuBtn = document.getElementById('menu-btn');
-const menu = document.getElementById('menu');
-let open = false;
-
-menuBtn.addEventListener('click', () => {
-    open = !open;
-    menu.classList.toggle('hidden');
-
-    // Animate Hamburger to X
-    menuBtn.children[0].classList.toggle('rotate-45', open);
-    menuBtn.children[1].classList.toggle('hidden', open);
-    menuBtn.children[2].classList.toggle('-rotate-45', open);
-
-    // Adjust spacing for X effect
-    menuBtn.children[0].classList.toggle('translate-y-1.5', open);
-    menuBtn.children[2].classList.toggle('-translate-y-1.5', open);
-});
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
-
-function setActiveLink() {
-    let scrollY = window.scrollY + 200; // Adjust for navbar height
-
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionId = section.getAttribute("id");
-
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            navLinks.forEach((link) => {
-                link.classList.remove("active-link");
-                if (link.getAttribute("href") === `#${sectionId}`) {
-                    link.classList.add("active-link");
-                }
-            });
-        }
-    });
-}
-
-window.addEventListener("scroll", setActiveLink);
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // Get all sections that need to be tracked
     const sections = document.querySelectorAll('#home, #projects, #aboutMe, #contact');
     // Get all navigation links
     const navLinks = document.querySelectorAll('nav a, .hidden a');
+
+    // Handle mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    
+    menuBtn.addEventListener('click', function() {
+        menu.classList.toggle('hidden');
+        // Animate hamburger to X
+        const bars = menuBtn.querySelectorAll('div');
+        bars[0].classList.toggle('rotate-45');
+        bars[0].classList.toggle('translate-y-1.5');
+        bars[1].classList.toggle('opacity-0');
+        bars[2].classList.toggle('-rotate-45');
+        bars[2].classList.toggle('-translate-y-1.5');
+    });
 
     // Function to update active link
     function updateActiveLink() {
@@ -104,6 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
+            // Close mobile menu when link is clicked
+            if (menu && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                // Reset hamburger button
+                const bars = menuBtn.querySelectorAll('div');
+                bars[0].classList.remove('rotate-45', 'translate-y-1.5');
+                bars[1].classList.remove('opacity-0');
+                bars[2].classList.remove('-rotate-45', '-translate-y-1.5');
+            }
+            
             // Only handle internal anchor links
             if (href.startsWith('#')) {
                 e.preventDefault();
@@ -120,3 +82,32 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Swiper for skill stack
+    const skillSwiper = new Swiper('.swiper', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            // When screen width is >= 640px
+            640: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            },
+            // When screen width is >= 768px
+            768: {
+                slidesPerView: 6,
+                spaceBetween: 30
+            },
+            // When screen width is >= 1024px
+            1024: {
+                slidesPerView: 8,
+                spaceBetween: 30
+            }
+        }
+    });
+});

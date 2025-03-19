@@ -13,11 +13,10 @@
 
 <body>
     <div class="h-auto pb-5">
-        <div class="container mx-auto mb-6" id="home">
+        <div class="container mx-auto px-4 md:px-6 mb-6 " >
             <!------- NAV  ---------->
-            <div
-                class="sticky top-0 bg-white w-full flex justify-between border-b border-[#F3F3F3] items-center py-6 mr-6 pr-6 mt-6" >
-                <a href="#home"></a>
+            <nav class="sticky top-0 bg-white w-full flex justify-between border-b border-[#F3F3F3] items-center py-6 mt-6 z-50 " >
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="text-xl font-bold">dracuzi { }</a>
 
                 <!-- Hamburger Button -->
                 <button id="menu-btn" class="block md:hidden">
@@ -28,19 +27,19 @@
                 <!-- Hamburger Button -->
 
                 <!------- LARGE SCREEN MENU  ---------->
-                <ul class="hidden md:flex items-center gap-x-6 text-gray-500 pr-6">
-                    <li><a class="text-base text-[#151515] font-medium border-b-2 pb-2 border-[#151515]"
+                <ul class="hidden md:flex items-center gap-x-6 text-gray-500 ">
+                    <li><a class="text-base text-[#151515] font-medium border-b-2 pb-2 border-[#151515] transition-all duration-200"
                             href="#home">Home</a>
                     </li>
-                    <li><a class="text-base text-gray-500" href="#projects">Projects</a></li>
-                    <li><a class="text-base text-gray-500" href="#aboutMe">About Me</a></li>
-                    <li><a class="text-base text-gray-500" href="Full resume .pdf"
+                    <li><a class="text-base text-gray-500 hover:text-[#151515] transition-all duration-200 " href="#projects">Projects</a></li>
+                    <li><a class="text-base text-gray-500 hover:text-[#151515] transition-all duration-200" href="#aboutMe">About Me</a></li>
+                    <li><a class="text-base text-gray-500 hover:text-[#151515] transition-all duration-200" href="Full resume .pdf"
                             download="Full resume .pdf">Resume</a></li>
-                    <li><a class="text-base text-gray-500" href="#contact"><button
+                    <li><a class="text-base text-gray-500 hover:text-[#151515] transition-all duration-200" href="#contact"><button
                                 class="py-3 px-5 border border-[#151515] rounded-full text-[#151515]">Let'stalk</button></a>
                     </li>
                 </ul>
-            </div>
+            </nav>
             <!------- LARGE SCREEN MENU  ---------->
 
             <!------- SMALL SCREEN MENU  ---------->
@@ -49,11 +48,11 @@
                     <li><a class="text-base text-[#151515] font-medium border-b-2 pb-2 border-[#151515]"
                         href="#home">Home</a>
                 </li>
-                <li><a class="text-base text-gray-500" href="#projects">Projects</a></li>
-                <li><a class="text-base text-gray-500" href="#aboutMe">About Me</a></li>
-                <li><a class="text-base text-gray-500" href="Full resume .pdf"
+                <li><a class="text-base text-gray-500 hover:text-[#151515] transition-all duration-100" href="#projects">Projects</a></li>
+                <li><a class="text-base text-gray-500 hover:text-[#151515] transition-all duration-100" href="#aboutMe">About Me</a></li>
+                <li><a class="text-base text-gray-500 hover:text-[#151515] transition-all duration-100" href="Full resume .pdf"
                         download="Full resume .pdf">Resume</a></li>
-                <li><a class="text-base text-gray-500" href="#contact"><button
+                <li><a class="text-base text-gray-500 hover:text-[#151515] transition-all duration-100" href="#contact"><button
                             class="py-3 px-5 border border-[#151515] rounded-full text-[#151515]">Let'stalk</button></a>
                 </li>
                 </ul>
@@ -63,7 +62,7 @@
             <!------- NAV  ---------->
 
             <!------- HERO  ---------->
-            <div class="py-4">
+            <div class="py-4" id="home">
                 <h1 class="font-semibold mt-16 text-4xl md:pr-6 md:mt-24 md:text-8xl">Building Smart Solutions, Crafting
                     Seamless Experiences.</h1>
                 <a href="Full resume .pdf" target="_blank"><button
